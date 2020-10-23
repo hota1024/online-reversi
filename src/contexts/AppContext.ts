@@ -4,13 +4,12 @@ import { createContext } from 'react'
  * AppContextData type.
  */
 export type AppContextData = {
-  connection: boolean
-
   name: string
+
+  io?: SocketIOClient.Socket
 }
 
 export const defaultAppContextData: AppContextData = {
-  connection: false,
   name: 'NONAME',
 }
 
