@@ -13,6 +13,7 @@
     "next": "9.5.5",
     "react": "17.0.0",
     "react-dom": "17.0.0",
+    "reversi-core": "^2.0.2",
     "socket.io-client": "^2.3.1"
   },
   "devDependencies": {

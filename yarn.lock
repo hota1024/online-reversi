@@ -4958,6 +4958,11 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
+reversi-core@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/reversi-core/-/reversi-core-2.0.2.tgz#6263dc16ea16ebc4e1217afaa57ff94188313ccd"
+  integrity sha512-vRuWNQKx5mMofdJBb50h+RIZHw5tdZCLEjzqQHf/3dcWqb96/4URKzb6IM+mCBRy/x8R4I1JbpxHv1ey+efIcQ==
+
 rework-visit@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/rework-visit/-/rework-visit-1.0.0.tgz#9945b2803f219e2f7aca00adb8bc9f640f842c9a"
