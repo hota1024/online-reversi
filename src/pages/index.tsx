@@ -1,33 +1,44 @@
-import Link from 'next/link'
-import { useContext } from 'react'
-import { AppContext } from '../contexts/AppContext'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 /**
- * Home component.
+ * HomePage component.
  */
-export const Home = (): React.ReactNode => {
-  const app = useContext(AppContext)
+export const HomePage: React.FC = () => {
+  const [nick, setNick] = useState('')
+  const [error, setError] = useState('')
+  const router = useRouter()
 
-  if (!app.io) {
-    return <>connecting...</>
+  const onGo = () => {
+    if (nick === '') {
+      setError('nickname is required')
+      return
+    }
+
+    if (nick.length > 10) {
+      setError('nickname length must be less than 10')
+      return
+    }
+
+    if (!nick.match(/^[a-zA-Z0-9]+$/)) {
+      setError('nickname is must be alphabet and number string')
+      return
+    }
+    router.replace(`/game?nick=${nick}`)
   }
 
   return (
     <>
-      <ul>
-        <li>
-          <Link href="/new">
-            <a href="/new">Create room</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/join">
-            <a href="/join">Join private room</a>
-          </Link>
-        </li>
-      </ul>
+      Nickname:
+      <input
+        type="text"
+        value={nick}
+        onChange={({ target: { value } }) => setNick(value)}
+      />
+      <button onClick={onGo}>Go!</button>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
     </>
   )
 }
 
-export default Home
+export default HomePage
